@@ -8,7 +8,7 @@
     <Label FontSize="50"
        FontAttributes="Bold"
        HorizontalOptions="Center"
-       Text="{Binding Header}"/>
+       Text="{Binding Title}"/>
     <Image Source="{Binding ImageSource}"
            VerticalOptions="CenterAndExpand"/>
 

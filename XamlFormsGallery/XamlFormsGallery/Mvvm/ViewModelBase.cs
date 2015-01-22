@@ -6,9 +6,18 @@ namespace XamlFormsGallery.Mvvm
 {
     public abstract class ViewModelBase : INotifyPropertyChanged
     {
+        private string _title;
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public INavigator Navigator { get; internal set; }
+
+        public string Title
+        {
+            get { return _title; }
+            internal set { SetProperty(ref _title, value); }
+        }
+
 
         protected virtual bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
         {

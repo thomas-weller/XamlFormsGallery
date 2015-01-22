@@ -28,6 +28,7 @@ namespace XamlFormsGallery.Mvvm
             {
                 var viewModel = _componentContext.ResolveNamed<ViewModelBase>(viewModelName);
                 viewModel.Navigator = _componentContext.Resolve<INavigator>();
+                viewModel.Title = GetViewModelTitle(pageName);
 
                 page.BindingContext = viewModel;
             }
@@ -43,6 +44,13 @@ namespace XamlFormsGallery.Mvvm
         private static string GetViewModelName(string pageName)
         {
             return pageName + "ViewModel";
+        }
+
+        private static string GetViewModelTitle(string pageName)
+        {
+            return pageName.EndsWith("Demo")
+                ? pageName.Substring(0, pageName.Length - 4)
+                : pageName;
         }
     }
 }
