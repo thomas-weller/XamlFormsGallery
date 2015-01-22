@@ -41,6 +41,7 @@
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\ImageDemoViewModel.cs" />
     <Compile Include="ViewModels\LabelDemoViewModel.cs" />
     <Compile Include="Mvvm\ViewModelBase.cs" />
     <Compile Include="Views\HomeView.xaml.cs">
@@ -48,6 +49,9 @@
     </Compile>
     <Compile Include="DI\XamlFormsGalleryModule.cs" />
     <Compile Include="Mvvm\IViewFactory.cs" />
+    <Compile Include="Views\ImageDemoView.xaml.cs">
+      <DependentUpon>ImageDemoView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LabelDemoView.xaml.cs">
       <DependentUpon>LabelDemoView.xaml</DependentUpon>
     </Compile>
@@ -75,6 +79,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\LabelDemoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ImageDemoView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
