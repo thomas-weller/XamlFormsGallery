@@ -4,7 +4,7 @@ using XamlFormsGallery.Mvvm;
 
 namespace XamlFormsGallery.ViewModels
 {
-    public class ImageDemoViewModel : ViewModelBase
+    public class BoxViewDemoViewModel : ViewModelBase
     {
         private ImageSource _imageSource;
 
@@ -14,7 +14,7 @@ namespace XamlFormsGallery.ViewModels
             private set { SetProperty(ref _imageSource, value); }
         }
 
-        public ImageDemoViewModel()
+        public BoxViewDemoViewModel()
         {
             ImageSource = Device.OnPlatform(ImageSource.FromUri(new Uri("http://xamarin.com/images/index/ide-xamarin-studio.png")),
                                             ImageSource.FromFile("ide_xamarin_studio.png"),

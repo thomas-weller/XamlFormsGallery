@@ -42,8 +42,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\ImageDemoViewModel.cs" />
+    <Compile Include="ViewModels\WebViewDemoViewModel.cs" />
     <Compile Include="ViewModels\LabelDemoViewModel.cs" />
     <Compile Include="Mvvm\ViewModelBase.cs" />
+    <Compile Include="Views\WebViewDemoView.xaml.cs">
+      <DependentUpon>WebViewDemoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BoxViewDemoView.xaml.cs">
+      <DependentUpon>BoxViewDemoView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
@@ -85,6 +92,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\ImageDemoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\BoxViewDemoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\WebViewDemoView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

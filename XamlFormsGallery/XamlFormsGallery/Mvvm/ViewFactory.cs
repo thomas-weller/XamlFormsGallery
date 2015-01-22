@@ -16,7 +16,7 @@ namespace XamlFormsGallery.Mvvm
         {
             string viewName = GetViewName(pageName);
 
-            if (!_componentContext.IsRegisteredWithName<Page>(viewName))
+            if (!_componentContext.IsRegisteredWithName< Page>(viewName))
             {
                 return null;
             }
