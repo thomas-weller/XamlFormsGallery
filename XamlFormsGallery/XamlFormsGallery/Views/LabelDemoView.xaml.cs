@@ -2,9 +2,9 @@
 
 namespace XamlFormsGallery.Views
 {
-    public partial class HomeView : ContentPage
+    public partial class LabelDemoView : ContentPage
     {
-        public HomeView()
+        public LabelDemoView()
         {
             InitializeComponent();
         }

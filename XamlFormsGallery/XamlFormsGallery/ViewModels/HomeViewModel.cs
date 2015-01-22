@@ -1,27 +1,14 @@
-﻿using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using Xamarin.Forms;
-using XamlFormsGallery.Annotations;
+using XamlFormsGallery.Mvvm;
 
 namespace XamlFormsGallery.ViewModels
 {
-    public class HomeViewModel : INotifyPropertyChanged
+    public class HomeViewModel : ViewModelBase
     {
-        public ICommand NavigateCommand =
-            new Command<string>(async (s) =>
-            {
-                int x = 9;
-            });
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        public ICommand NavigateCommand 
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+            get { return new Command<string>(async s => await Navigator.PushAsync(s)); }
         }
     }
 }
