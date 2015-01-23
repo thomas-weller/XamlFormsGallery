@@ -35,18 +35,18 @@ namespace XamlFormsGallery.ViewModels
             set { SetProperty(ref _pickerIndex, value); }
         }
 
+        public string[] ColorNames
+        {
+            get { return _nameToColor.Keys.ToArray(); }
+        }
+
         public PickerDemoViewModel()
         {
             PropertyChanged += (sender, args) =>
             {
-                if (PickerIndex == -1)
-                {
-                    Color = Color.Default;
-                }
-                else
-                {
-                    Color = _nameToColor[_nameToColor.ElementAt(PickerIndex).Key];
-                }
+                Color = PickerIndex == -1 ? 
+                    Color.Default : 
+                    _nameToColor[_nameToColor.ElementAt(PickerIndex).Key];
             };
 
             PickerIndex = -1;

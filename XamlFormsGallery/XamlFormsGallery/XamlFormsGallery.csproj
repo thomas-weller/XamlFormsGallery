@@ -45,6 +45,7 @@
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\ImageDemoViewModel.cs" />
     <Compile Include="ViewModels\ButtonDemoViewModel.cs" />
+    <Compile Include="ViewModels\ImageCellDemoViewModel.cs" />
     <Compile Include="ViewModels\TableViewFormDemoViewModel.cs" />
     <Compile Include="ViewModels\TableViewMenuDemoViewModel.cs" />
     <Compile Include="ViewModels\ListViewDemoViewModel.cs" />
@@ -58,6 +59,21 @@
     <Compile Include="ViewModels\WebViewDemoViewModel.cs" />
     <Compile Include="ViewModels\LabelDemoViewModel.cs" />
     <Compile Include="Mvvm\ViewModelBase.cs" />
+    <Compile Include="Views\ImageCellDemoView.xaml.cs">
+      <DependentUpon>ImageCellDemoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContentViewDemoView.xaml.cs">
+      <DependentUpon>ContentViewDemoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SwitchCellDemoView.xaml.cs">
+      <DependentUpon>SwitchCellDemoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntryCellDemoView.xaml.cs">
+      <DependentUpon>EntryCellDemoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TextCellDemoView.xaml.cs">
+      <DependentUpon>TextCellDemoView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TableViewFormDemoView.xaml.cs">
       <DependentUpon>TableViewFormDemoView.xaml</DependentUpon>
     </Compile>
@@ -264,6 +280,36 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\TableViewFormDemoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TextCellDemoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ImageCellDemoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\SwitchCellDemoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\EntryCellDemoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ContentViewDemoView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

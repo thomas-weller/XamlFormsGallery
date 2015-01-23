@@ -15,7 +15,11 @@ namespace XamlFormsGallery.Views
             base.OnBindingContextChanged();
 
             var viewModel = (PickerDemoViewModel)BindingContext;
-            viewModel.InitPicker(Picker);
+
+            foreach (string colorName in viewModel.ColorNames)
+            {
+                Picker.Items.Add(colorName);
+            }
         }
     }
 }

@@ -4,7 +4,7 @@ using XamlFormsGallery.Mvvm;
 
 namespace XamlFormsGallery.ViewModels
 {
-    public class TableViewFormDemoViewModel : ViewModelBase
+    public class ImageCellDemoViewModel : ViewModelBase
     {
         private ImageSource _imageCellImageSource;
 
@@ -14,7 +14,7 @@ namespace XamlFormsGallery.ViewModels
             private set { SetProperty(ref _imageCellImageSource, value); }
         }
 
-        public TableViewFormDemoViewModel()
+        public ImageCellDemoViewModel()
         {
             ImageCellImageSource = Device.OnPlatform(
                 ImageSource.FromUri(new Uri("http://xamarin.com/images/index/ide-xamarin-studio.png")),
