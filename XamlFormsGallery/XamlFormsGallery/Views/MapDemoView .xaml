@@ -28,6 +28,7 @@
                     Android="False" />
       </maps:Map.IsVisible>
     </maps:Map>
+    
   </StackLayout>
 
 </ContentPage>

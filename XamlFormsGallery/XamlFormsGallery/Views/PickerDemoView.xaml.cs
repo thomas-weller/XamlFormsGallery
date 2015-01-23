@@ -3,9 +3,9 @@ using XamlFormsGallery.ViewModels;
 
 namespace XamlFormsGallery.Views
 {
-    public partial class MapDemoView : ContentPage
+    public partial class PickerDemoView : ContentPage
     {
-        public MapDemoView()
+        public PickerDemoView()
         {
             InitializeComponent();
         }
@@ -14,8 +14,8 @@ namespace XamlFormsGallery.Views
         {
             base.OnBindingContextChanged();
 
-            var viewModel = (MapDemoViewModel)BindingContext;
-            viewModel.InitializeMap(Map);
+            var viewModel = (PickerDemoViewModel)BindingContext;
+            viewModel.InitPicker(Picker);
         }
     }
 }

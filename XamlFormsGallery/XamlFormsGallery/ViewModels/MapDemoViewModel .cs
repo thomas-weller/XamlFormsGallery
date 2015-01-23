@@ -15,12 +15,6 @@ namespace XamlFormsGallery.ViewModels
             private set { SetProperty(ref _androidDisclaimerText, value); }
         }
 
-        public Map Map
-        {
-            get { return _map; }
-            private set { SetProperty(ref _map, value); }
-        }
-
         public MapDemoViewModel()
         {
             if (Device.OS == TargetPlatform.Android)
@@ -28,19 +22,20 @@ namespace XamlFormsGallery.ViewModels
                 AndroidDisclaimerText = "Android applications require API key " +
                                         "to use the Google Map service.";
             }
-            else
-            {
-                Map = new Map();
+        }
 
-                // Let's visit Xamarin HQ in San Francisco!
-                var position = new Position(37.79762, -122.40181);
-                Map.MoveToRegion(new MapSpan(position, 0.01, 0.01));
-                Map.Pins.Add(new Pin
-                {
-                    Label = "Xamarin",
-                    Position = position
-                });
-            }
+        internal void InitializeMap(Map map)
+        {
+            _map = map;
+
+            // Let's visit Xamarin HQ in San Francisco!
+            var position = new Position(37.79762, -122.40181);
+            _map.MoveToRegion(new MapSpan(position, 0.01, 0.01));
+            _map.Pins.Add(new Pin
+            {
+                Label = "Xamarin",
+                Position = position
+            });
         }
     }
 }

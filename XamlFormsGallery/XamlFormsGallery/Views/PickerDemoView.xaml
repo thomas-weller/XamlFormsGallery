@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamlFormsGallery.Views.PickerDemoView">
+
+  <StackLayout>
+
+    <Label FontSize="50"
+           FontAttributes="Bold"
+           HorizontalOptions="Center"
+           Text="{Binding Title}"/>
+    <Picker x:Name="Picker"
+            SelectedIndex="{Binding PickerIndex, Mode=OneWayToSource}" />
+    <BoxView HeightRequest="150"
+             WidthRequest="150"
+             HorizontalOptions="Center"
+             VerticalOptions="CenterAndExpand"
+             Color="{Binding Color}"/>
+    
+  </StackLayout>
+
+</ContentPage>

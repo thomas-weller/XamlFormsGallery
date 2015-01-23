@@ -45,6 +45,7 @@
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\ImageDemoViewModel.cs" />
     <Compile Include="ViewModels\ButtonDemoViewModel.cs" />
+    <Compile Include="ViewModels\PickerDemoViewModel.cs" />
     <Compile Include="ViewModels\ProgressBarDemoViewModel.cs" />
     <Compile Include="ViewModels\StepperDemoViewModel.cs" />
     <Compile Include="ViewModels\SwitchDemoViewModel.cs" />
@@ -54,6 +55,9 @@
     <Compile Include="ViewModels\WebViewDemoViewModel.cs" />
     <Compile Include="ViewModels\LabelDemoViewModel.cs" />
     <Compile Include="Mvvm\ViewModelBase.cs" />
+    <Compile Include="Views\PickerDemoView.xaml.cs">
+      <DependentUpon>PickerDemoView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ProgressBarDemoView.xaml.cs">
       <DependentUpon>ProgressBarDemoView.xaml</DependentUpon>
     </Compile>
@@ -224,6 +228,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\ProgressBarDemoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PickerDemoView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
