@@ -43,6 +43,7 @@
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\ImageDemoViewModel.cs" />
     <Compile Include="ViewModels\ButtonDemoViewModel.cs" />
+    <Compile Include="ViewModels\SliderDemoViewModel.cs" />
     <Compile Include="ViewModels\SearchBarDemoViewModel.cs" />
     <Compile Include="ViewModels\MapDemoViewModel .cs" />
     <Compile Include="ViewModels\WebViewDemoViewModel.cs" />
@@ -50,6 +51,9 @@
     <Compile Include="Mvvm\ViewModelBase.cs" />
     <Compile Include="Views\ButtonDemoView.xaml.cs">
       <DependentUpon>ButtonDemoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SliderDemoView.xaml.cs">
+      <DependentUpon>SliderDemoView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SearchBarDemoView.xaml.cs">
       <DependentUpon>SearchBarDemoView.xaml</DependentUpon>
@@ -137,6 +141,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\SearchBarDemoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\SliderDemoView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
