@@ -9,7 +9,7 @@
            FontAttributes="Bold"
            HorizontalOptions="Center"
            Text="{Binding Title}"/>
-    <Entry Placeholder="Enter email address"
+    <!--<Entry Placeholder="Enter email address"
            Keyboard="{x:Static Keyboard.Email}"
            VerticalOptions="CenterAndExpand"/>
     <Entry Placeholder="Enter password"
@@ -18,7 +18,7 @@
            VerticalOptions="CenterAndExpand"/>
     <Entry Placeholder="Enter phone number"
            Keyboard="{x:Static Keyboard.Telephone}"
-           VerticalOptions="CenterAndExpand"/>
+           VerticalOptions="CenterAndExpand"/>-->
 
   </StackLayout>
 
