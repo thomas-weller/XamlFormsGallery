@@ -54,6 +54,9 @@
     <Compile Include="Views\ButtonDemoView.xaml.cs">
       <DependentUpon>ButtonDemoView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\EntryDemoView.xaml.cs">
+      <DependentUpon>EntryDemoView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TimePickerDemoView.xaml.cs">
       <DependentUpon>TimePickerDemoView.xaml</DependentUpon>
     </Compile>
@@ -185,6 +188,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\TimePickerDemoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\EntryDemoView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
