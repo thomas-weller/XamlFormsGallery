@@ -4,20 +4,19 @@
              x:Class="XamlFormsGallery.Views.ContentViewDemoView">
 
   <StackLayout>
-    
+
     <Label FontSize="50"
            FontAttributes="Bold"
            HorizontalOptions="Center"
            Text="ContentView"/>
-    <Label>
-      <Label.Text>
-The ContentView (colored aqua in this example) might not seem very useful
-because it can have a single child (in this example a Label) and doesn't
-do much else. But ContentView is sometimes a convenient way of providing a background
-color or giving a little margin to its child through its own Padding property.
-      </Label.Text>
-    </Label>
-    
+    <ContentView BackgroundColor="Aqua"
+                 Padding="25"
+                 HorizontalOptions="Fill"
+                 VerticalOptions="CenterAndExpand">
+      <Label Text="The ContentView (colored aqua in this example) might not seem very useful because it can have a single child (in this example a Label) and doesn't do much else. But ContentView is sometimes a convenient way of providing a background color or giving a little margin to its child through its own Padding property."
+             TextColor="Purple"/>
+    </ContentView>
+
   </StackLayout>
 
 </ContentPage>
