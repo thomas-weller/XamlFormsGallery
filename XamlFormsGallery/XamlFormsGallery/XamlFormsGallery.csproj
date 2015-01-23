@@ -65,6 +65,9 @@
     <Compile Include="Views\ContentViewDemoView.xaml.cs">
       <DependentUpon>ContentViewDemoView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FrameDemoView.xaml.cs">
+      <DependentUpon>FrameDemoView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SwitchCellDemoView.xaml.cs">
       <DependentUpon>SwitchCellDemoView.xaml</DependentUpon>
     </Compile>
@@ -310,6 +313,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\ContentViewDemoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\FrameDemoView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
