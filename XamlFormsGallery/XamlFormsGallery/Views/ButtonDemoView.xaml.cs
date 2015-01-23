@@ -2,9 +2,9 @@
 
 namespace XamlFormsGallery.Views
 {
-    public partial class MapDemoView : ContentPage
+    public partial class ButtonDemoView : ContentPage
     {
-        public MapDemoView()
+        public ButtonDemoView()
         {
             InitializeComponent();
         }
