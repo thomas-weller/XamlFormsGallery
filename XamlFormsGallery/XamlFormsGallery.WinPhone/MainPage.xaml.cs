@@ -18,6 +18,8 @@ namespace XamlFormsGallery.WinPhone
             SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
 
             global::Xamarin.Forms.Forms.Init();
+            global::Xamarin.FormsMaps.Init();
+
             LoadApplication(new XamlFormsGallery.App());
         }
     }

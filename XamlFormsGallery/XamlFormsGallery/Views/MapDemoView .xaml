@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="XamlFormsGallery.Views.MapDemoView">
+
+  <StackLayout>
+
+    <Label FontSize="50"
+           FontAttributes="Bold"
+           HorizontalOptions="Center"
+           Text="{Binding Title}"/>
+    <Label Font="Large"
+           VerticalOptions="CenterAndExpand"
+           Text="{Binding AndroidDisclaimerText}">
+      <Label.IsVisible>
+        <OnPlatform x:TypeArguments="x:Boolean"
+                    iOS="False"
+                    WinPhone="False"
+                    Android="True" />
+      </Label.IsVisible>
+    </Label>
+    <maps:Map x:Name="Map">
+      <maps:Map.IsVisible>
+        <OnPlatform x:TypeArguments="x:Boolean"
+                    iOS="True"
+                    WinPhone="True"
+                    Android="False" />
+      </maps:Map.IsVisible>
+    </maps:Map>
+  </StackLayout>
+
+</ContentPage>
