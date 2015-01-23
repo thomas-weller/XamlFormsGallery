@@ -8,7 +8,7 @@
     <Label FontSize="50"
            FontAttributes="Bold"
            HorizontalOptions="Center"
-           Text="{Binding Title}"/>
+           Text="BoxView"/>
     <BoxView Color="Accent"
              WidthRequest="150"
              HeightRequest="150"
