@@ -49,9 +49,6 @@
                   CommandParameter="DatePickerDemo" />
         <TextCell Text="TimePicker"
                   Command="{Binding NavigateCommand}"
-                  CommandParameter="" />
-        <TextCell Text=""
-                  Command="{Binding NavigateCommand}"
                   CommandParameter="TimePickerDemo" />
       </TableSection>
 
