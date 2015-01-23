@@ -1,6 +1,4 @@
-﻿using System;
-using System.ComponentModel;
-using XamlFormsGallery.Mvvm;
+﻿using XamlFormsGallery.Mvvm;
 
 namespace XamlFormsGallery.ViewModels
 {
@@ -23,19 +21,15 @@ namespace XamlFormsGallery.ViewModels
 
         public SliderDemoViewModel()
         {
-            PropertyChanged += OnPropertyChanged;
+            PropertyChanged += (sender, args) =>
+            {
+                if (args.PropertyName == "SliderValue")
+                {
+                    LabelText = string.Format("Slider value is {0:F1}", SliderValue);
+                }
+            };
 
             LabelText = "Slider value is 0";
-        }
-
-        private void OnPropertyChanged(object sender, PropertyChangedEventArgs args)
-        {
-            if (args.PropertyName != "SliderValue")
-            {
-                return;
-            }
-
-            LabelText = string.Format("Slider value is {0:F1}", SliderValue);
         }
     }
 }
