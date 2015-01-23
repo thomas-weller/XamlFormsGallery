@@ -1,15 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamlFormsGallery.Views.EditorDemoView">
+             x:Class="XamlFormsGallery.Views.ActivityIndicatorDemoView">
 
   <StackLayout>
     
     <Label FontSize="50"
            FontAttributes="Bold"
            HorizontalOptions="Center"
-           Text="Editor"/>
-    <Editor VerticalOptions="FillAndExpand"/>
+           Text="ActivityIndicator"/>
+    <ActivityIndicator IsRunning="True"
+                       VerticalOptions="CenterAndExpand">
+      <OnPlatform x:TypeArguments="Color"
+                  iOS="Black" />
+    </ActivityIndicator>
 
   </StackLayout>
 
