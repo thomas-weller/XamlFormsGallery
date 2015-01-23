@@ -43,6 +43,7 @@
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\ImageDemoViewModel.cs" />
     <Compile Include="ViewModels\ButtonDemoViewModel.cs" />
+    <Compile Include="ViewModels\StepperDemoViewModel.cs" />
     <Compile Include="ViewModels\SwitchDemoViewModel.cs" />
     <Compile Include="ViewModels\SliderDemoViewModel.cs" />
     <Compile Include="ViewModels\SearchBarDemoViewModel.cs" />
@@ -52,6 +53,9 @@
     <Compile Include="Mvvm\ViewModelBase.cs" />
     <Compile Include="Views\ButtonDemoView.xaml.cs">
       <DependentUpon>ButtonDemoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StepperDemoView.xaml.cs">
+      <DependentUpon>StepperDemoView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SwitchDemoView.xaml.cs">
       <DependentUpon>SwitchDemoView.xaml</DependentUpon>
@@ -157,6 +161,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\SwitchDemoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\StepperDemoView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
