@@ -45,6 +45,7 @@
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\ImageDemoViewModel.cs" />
     <Compile Include="ViewModels\ButtonDemoViewModel.cs" />
+    <Compile Include="ViewModels\TableViewFormDemoViewModel.cs" />
     <Compile Include="ViewModels\TableViewMenuDemoViewModel.cs" />
     <Compile Include="ViewModels\ListViewDemoViewModel.cs" />
     <Compile Include="ViewModels\PickerDemoViewModel.cs" />
@@ -57,6 +58,9 @@
     <Compile Include="ViewModels\WebViewDemoViewModel.cs" />
     <Compile Include="ViewModels\LabelDemoViewModel.cs" />
     <Compile Include="Mvvm\ViewModelBase.cs" />
+    <Compile Include="Views\TableViewFormDemoView.xaml.cs">
+      <DependentUpon>TableViewFormDemoView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TableViewMenuDemoView.xaml.cs">
       <DependentUpon>TableViewMenuDemoView.xaml</DependentUpon>
     </Compile>
@@ -254,6 +258,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\TableViewMenuDemoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TableViewFormDemoView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

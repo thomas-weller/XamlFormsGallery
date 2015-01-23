@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamlFormsGallery.Views.TableViewFormDemoView">
+
+  <StackLayout>
+
+    <Label FontSize="50"
+           FontAttributes="Bold"
+           HorizontalOptions="Center"
+           Text="{Binding Title}"/>
+    <TableView Intent="Form">
+      <TableRoot>
+        <TableSection>
+          <TextCell Text="Text Cell"
+                    Detail="With Detail Text" />
+          <ImageCell Text="Image Cell"
+                     Detail="With Detail Text"
+                     ImageSource="{Binding ImageCellImageSource}" />
+          <SwitchCell Text="Switch Cell" />
+          <EntryCell Label="Entry Cell"
+                     Placeholder="Type text here" />
+          <ViewCell>
+            <Label Text="A View Cell can be anything you want!" />
+          </ViewCell>
+        </TableSection>
+      </TableRoot>
+    </TableView>
+
+  </StackLayout>
+
+</ContentPage>

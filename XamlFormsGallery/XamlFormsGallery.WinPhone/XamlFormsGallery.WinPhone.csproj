@@ -123,6 +123,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\ide-xamarin-studio.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="SplashScreenImage.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

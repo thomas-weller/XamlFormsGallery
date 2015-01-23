@@ -102,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ide_xamarin_studio.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XamlFormsGallery\XamlFormsGallery.csproj">
