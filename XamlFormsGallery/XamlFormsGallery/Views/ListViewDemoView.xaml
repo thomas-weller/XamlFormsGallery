@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamlFormsGallery.Views.ListViewDemoView">
+
+  <StackLayout>
+
+    <Label FontSize="50"
+           FontAttributes="Bold"
+           HorizontalOptions="Center"
+           Text="{Binding Title}"/>
+    <ListView ItemsSource="{Binding People}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.View>
+              <StackLayout Padding="0,5"
+                           Orientation="Horizontal">
+                <BoxView Color="{Binding FavoriteColor}" />
+                <StackLayout VerticalOptions="Center"
+                             Spacing="0">
+                  <Label Text="{Binding Name}" />
+                  <Label Text="{Binding Birthday, StringFormat='Born {0:d}'}" />
+                </StackLayout>
+              </StackLayout>
+            </ViewCell.View>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+
+  </StackLayout>
+
+</ContentPage>
