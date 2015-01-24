@@ -46,6 +46,7 @@
     <Compile Include="ViewModels\ImageDemoViewModel.cs" />
     <Compile Include="ViewModels\ButtonDemoViewModel.cs" />
     <Compile Include="ViewModels\ImageCellDemoViewModel.cs" />
+    <Compile Include="ViewModels\AbsoluteLayoutDemoViewModel.cs" />
     <Compile Include="ViewModels\TableViewFormDemoViewModel.cs" />
     <Compile Include="ViewModels\TableViewMenuDemoViewModel.cs" />
     <Compile Include="ViewModels\ListViewDemoViewModel.cs" />
@@ -59,6 +60,9 @@
     <Compile Include="ViewModels\WebViewDemoViewModel.cs" />
     <Compile Include="ViewModels\LabelDemoViewModel.cs" />
     <Compile Include="Mvvm\ViewModelBase.cs" />
+    <Compile Include="Views\AbsoluteLayoutDemoView.xaml.cs">
+      <DependentUpon>AbsoluteLayoutDemoView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\StackLayoutDemoView.xaml.cs">
       <DependentUpon>StackLayoutDemoView.xaml</DependentUpon>
     </Compile>
@@ -337,6 +341,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\StackLayoutDemoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\AbsoluteLayoutDemoView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

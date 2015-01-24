@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamlFormsGallery.Views.AbsoluteLayoutDemoView">
+
+  <StackLayout>
+    
+    <Label FontSize="50"
+           FontAttributes="Bold"
+           HorizontalOptions="Center"
+           Text="{Binding Title}"/>
+
+    <AbsoluteLayout BackgroundColor="Blue"
+                    VerticalOptions="FillAndExpand">
+
+    <Label Text="AbsoluteLayout"
+           TextColor="Black"
+           AbsoluteLayout.LayoutFlags="PositionProportional"
+           AbsoluteLayout.LayoutBounds="{Binding Label1Bounds}"/>
+    <Label Text="AbsoluteLayout"
+           TextColor="Black"
+           AbsoluteLayout.LayoutFlags="PositionProportional"
+           AbsoluteLayout.LayoutBounds="{Binding Label2Bounds}"/>
+
+    </AbsoluteLayout>
+    
+  </StackLayout>
+
+</ContentPage>
