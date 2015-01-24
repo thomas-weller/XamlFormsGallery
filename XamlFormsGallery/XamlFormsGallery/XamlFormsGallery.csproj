@@ -60,6 +60,9 @@
     <Compile Include="ViewModels\WebViewDemoViewModel.cs" />
     <Compile Include="ViewModels\LabelDemoViewModel.cs" />
     <Compile Include="Mvvm\ViewModelBase.cs" />
+    <Compile Include="Views\GridDemoView.xaml.cs">
+      <DependentUpon>GridDemoView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AbsoluteLayoutDemoView.xaml.cs">
       <DependentUpon>AbsoluteLayoutDemoView.xaml</DependentUpon>
     </Compile>
@@ -347,6 +350,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\AbsoluteLayoutDemoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\GridDemoView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
