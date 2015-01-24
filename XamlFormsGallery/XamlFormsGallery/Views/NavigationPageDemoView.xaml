@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamlFormsGallery.Views.NavigationPageDemoView">
+
+  <!--
+  Although this page is actually a ContentPage, it can
+  function as a NavigationPage because the HomePage
+  is launched as an ApplicationPage in App.
+  -->
+  
+  <StackLayout>
+    
+    <Label FontSize="50"
+           FontAttributes="Bold"
+           HorizontalOptions="Center"
+           Text="{Binding Title}"/>
+
+    <StackLayout HorizontalOptions="Center">
+
+      <Button Text=" Go to Label Demo Page "
+              Font="Large"
+              BorderWidth="1"
+              Command="{Binding NavigateCommand}"
+              CommandParameter="LabelDemo" />
+      <Button Text=" Go to Image Demo Page "
+              Font="Large"
+              BorderWidth="1"
+              Command="{Binding NavigateCommand}"
+              CommandParameter="ImageDemo" />
+      <Button Text=" Go to BoxView Demo Page "
+              Font="Large"
+              BorderWidth="1"
+              Command="{Binding NavigateCommand}"
+              CommandParameter="BoxViewDemo" />
+      <Button Text=" Go to WebView Demo Page "
+              Font="Large"
+              BorderWidth="1"
+              Command="{Binding NavigateCommand}"
+              CommandParameter="WebViewDemo" />
+
+    </StackLayout>
+    
+  </StackLayout>
+
+</ContentPage>
