@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamlFormsGallery.Views.RelativeLayoutDemoView">
+
+  <Grid>
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <Label FontSize="50"
+           FontAttributes="Bold"
+           HorizontalOptions="Center"
+           Text="RelativeLayout"/>
+
+    <RelativeLayout Grid.Column="0"
+                    Grid.Row="1">
+
+      <!-- A Label whose upper-left is centered vertically. -->
+      <Label x:Name="ReferenceLabel"
+             Text="Not visible"
+             Opacity="0"
+             Font="Large"
+             RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, 
+                                                               Constant=0}"
+             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, 
+                                                               Property=Height, 
+                                                               Factor=0.5}"/>
+
+      <!-- A Label (roughly) centered vertically. -->
+      <Label x:Name="CenterLabel"
+             Text="Center"
+             Font="Large"
+             RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, 
+                                                               Constant=0}"
+             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, 
+                                                               ElementName=ReferenceLabel,  
+                                                               Property=Y, 
+                                                               Constant=-30}"/>
+      <!-- A Label above the centered Label. -->
+      <Label x:Name="AboveLabel"
+             Text="Above"
+             Font="Large"
+             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, 
+                                                               ElementName=CenterLabel,  
+                                                               Property=X, 
+                                                               Constant=60}"
+             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, 
+                                                               ElementName=CenterLabel,  
+                                                               Property=Y, 
+                                                               Constant=-30}"/>
+      <!-- A Label below the centered Label. -->
+      <Label x:Name="BelowLabel"
+             Text="Below"
+             Font="Large"
+             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, 
+                                                               ElementName=CenterLabel,  
+                                                               Property=X, 
+                                                               Constant=60}"
+             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, 
+                                                               ElementName=CenterLabel,  
+                                                               Property=Y, 
+                                                               Constant=30}"/>
+      <!-- Finish with another on top... -->
+      <Label Text="Further Above"
+             Font="Large"
+             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, 
+                                                               ElementName=AboveLabel,  
+                                                               Property=X, 
+                                                               Constant=60}"
+             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, 
+                                                               ElementName=AboveLabel,  
+                                                               Property=Y, 
+                                                               Constant=-30}"/>
+      <!-- ...and another on the bottom. -->
+      <Label Text="Further Below"
+             Font="Large"
+             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, 
+                                                               ElementName=BelowLabel,  
+                                                               Property=X, 
+                                                               Constant=60}"
+             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, 
+                                                               ElementName=BelowLabel,  
+                                                               Property=Y, 
+                                                               Constant=30}"/>
+
+      <!-- Four BoxViews, one in each corner -->
+      <BoxView Color="Red"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, 
+                                                                 Constant=0}"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=Constant,
+                                                                 Constant=0}"/>
+      <BoxView Color="Green"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, 
+                                                                 Property=Width,
+                                                                 Constant=-40}"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=Constant,
+                                                                 Constant=0}"/>
+      <BoxView Color="Blue"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=Constant,
+                                                                 Constant=0}"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, 
+                                                                 Property=Height,
+                                                                 Constant=-40}"/>
+      <BoxView Color="Yellow"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, 
+                                                                 Property=Width,
+                                                                 Constant=-40}"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, 
+                                                                 Property=Height,
+                                                                 Constant=-40}"/>
+
+    </RelativeLayout>
+
+  </Grid>
+
+</ContentPage>
+
+
