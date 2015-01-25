@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  x:Class="XamlFormsGallery.Views.MasterDetailPageDemoView">
+
+    <MasterDetailPage.Master>
+      <ContentPage Title="Color List" >
+        
+        <StackLayout>
+          
+          <Label FontSize="30"
+                 HorizontalOptions="Center"
+                 Text="{Binding Title}"/>
+          <ListView ItemsSource="{Binding ColorNames}"
+                    SelectedItem="{Binding ColorName, Mode=TwoWay}"
+                    ItemTapped="ListView_OnItemTapped"/>
+          
+        </StackLayout>
+        
+      </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+      <ContentPage>
+        
+        <StackLayout BackgroundColor="Gray">
+            
+          <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped" />
+          </StackLayout.GestureRecognizers>
+          
+          <Label Font="Large"
+                 XAlign="Center"
+                 Text="{Binding Color.R, StringFormat='R = {0:F2}'}"/>
+          <Label Font="Large"
+                 XAlign="Center"
+                 Text="{Binding Color.G, StringFormat='G = {0:F2}'}"/>
+          <Label Font="Large"
+                 XAlign="Center"
+                 Text="{Binding Color.B, StringFormat='B = {0:F2}'}"/>
+          <BoxView HeightRequest="100"
+                   WidthRequest="100"
+                   HorizontalOptions="Center"
+                   Color="{Binding Color}" />
+          <StackLayout HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand">
+            <Label Font="Large"
+                   XAlign="End"
+                   Text="{Binding Color.Hue, StringFormat='Hue = {0:F2}'}"/>
+            <Label Font="Large"
+                   XAlign="End"
+                   Text="{Binding Color.Saturation, StringFormat='Saturation = {0:F2}'}"/>
+            <Label Font="Large"
+                   XAlign="End"
+                   Text="{Binding Color.Luminosity, StringFormat='Luminosity = {0:F2}'}"/>
+          </StackLayout>
+
+        </StackLayout>
+
+      </ContentPage>
+    </MasterDetailPage.Detail>
+    
+</MasterDetailPage>

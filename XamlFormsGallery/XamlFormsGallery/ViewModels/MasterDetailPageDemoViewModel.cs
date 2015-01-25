@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using Xamarin.Forms;
 using XamlFormsGallery.Mvvm;
 
 namespace XamlFormsGallery.ViewModels
 {
-    public class PickerDemoViewModel : ViewModelBase
+    public class MasterDetailPageDemoViewModel : ViewModelBase
     {
         // Dictionary to get Color from color name.
         private readonly Dictionary<string, Color> _nameToColor = new Dictionary<string, Color>
@@ -20,47 +21,45 @@ namespace XamlFormsGallery.ViewModels
             { "White", Color.White },       { "Yellow", Color.Yellow }
         };
 
-        private int _pickerIndex;
+        private string _colorName;
         private Color _color;
-
-        public Color Color
-        {
-            get { return _color; }
-            set { SetProperty(ref _color, value); }
-        }
-
-        public int PickerIndex
-        {
-            private get { return _pickerIndex; }
-            set { SetProperty(ref _pickerIndex, value); }
-        }
 
         public string[] ColorNames
         {
             get { return _nameToColor.Keys.ToArray(); }
         }
 
-        public PickerDemoViewModel()
+        public string ColorName
         {
-            PropertyChanged += (sender, args) =>
-            {
-                if (args.PropertyName == "PickerIndex")
-                {
-                    Color = PickerIndex == -1
-                        ? Color.Default
-                        : _nameToColor[_nameToColor.ElementAt(PickerIndex).Key];
-                }
-            };
-
-            PickerIndex = -1;
+            get { return _colorName; }
+            set { SetProperty(ref _colorName, value); }
         }
 
-        internal void InitPicker(Picker picker)
+        public Color Color
         {
-            foreach (string colorName in _nameToColor.Keys)
+            get { return _color; }
+            private set { SetProperty(ref _color, value); }
+        }
+
+        public MasterDetailPageDemoViewModel()
+        {
+            ColorName = _nameToColor.Keys.First();
+            Color = _nameToColor[_colorName];
+
+            PropertyChanged += delegate(object sender, PropertyChangedEventArgs args)
             {
-                picker.Items.Add(colorName);
-            }
+                if (args.PropertyName == "ColorName")
+                {
+                    OnColorNameSelected();
+                }
+            };
+        }
+
+        private void OnColorNameSelected()
+        {
+            Color = string.IsNullOrEmpty(ColorName)
+                ? Color.Default
+                : _nameToColor[ColorName];
         }
     }
 }
