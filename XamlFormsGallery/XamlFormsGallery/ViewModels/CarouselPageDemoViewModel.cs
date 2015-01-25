@@ -4,9 +4,9 @@ using XamlFormsGallery.Mvvm;
 
 namespace XamlFormsGallery.ViewModels
 {
-    public class TabbedPageDemoViewModel : ViewModelBase
+    public class CarouselPageDemoViewModel : ViewModelBase
     {
-        private readonly NamedColor[] _namedColors =
+        private readonly NamedColor[] _namedColors = 
         {
             new NamedColor("Red", Color.Red),
             new NamedColor("Yellow", Color.Yellow), 
