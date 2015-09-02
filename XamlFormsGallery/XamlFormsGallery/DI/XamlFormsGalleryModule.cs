@@ -9,26 +9,34 @@ namespace XamlFormsGallery
         protected override void Load(ContainerBuilder builder)
         {
             // Views
-            builder.RegisterAssemblyTypes(ThisAssembly)
-                .AssignableTo<Page>()
-                .Where(v => !v.IsAssignableTo<IInstancePerLifetimeScope>())
-                .Named<Page>(t => t.Name)
-                .SingleInstance();
-            builder.RegisterAssemblyTypes(ThisAssembly)
-                .AssignableTo<Page>()
-                .Where(v => v.IsAssignableTo<IInstancePerLifetimeScope>())
-                .Named<Page>(t => t.Name);
+            RegisterTypesWithBase<Page>(builder);
 
             // ViewModels
+            RegisterTypesWithBase<ViewModelBase>(builder);
+        }
+        private void RegisterTypesWithBase<TBaseType>(ContainerBuilder builder)
+        {
+            RegisterSingletons<TBaseType>(builder);
+            RegisterTransientTypes<TBaseType>(builder);
+        }
+        
+        private void RegisterSingletons<TBaseType>(ContainerBuilder builder)
+        {
+            // Views
             builder.RegisterAssemblyTypes(ThisAssembly)
-                .AssignableTo<ViewModelBase>()
+                .AssignableTo<TBaseType>()
                 .Where(v => !v.IsAssignableTo<IInstancePerLifetimeScope>())
-                .Named<ViewModelBase>(t => t.Name)
+                .Named<TBaseType>(t => t.Name)
                 .SingleInstance();
+        }
+        
+        private void RegisterTransientTypes<TBaseType>(ContainerBuilder builder)
+        {
+            // Views
             builder.RegisterAssemblyTypes(ThisAssembly)
-                .AssignableTo<ViewModelBase>()
+                .AssignableTo<TBaseType>()
                 .Where(v => v.IsAssignableTo<IInstancePerLifetimeScope>())
-                .Named<ViewModelBase>(t => t.Name);
+                .Named<TBaseType>(t => t.Name);
         }
     }
 }
